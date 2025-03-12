@@ -10,7 +10,7 @@ body {
     background-color: #212121;
 }
 header img {
-    height: 3rem;
+    height: 4rem;
     margin: 1rem;
 }
 
@@ -24,7 +24,7 @@ main {
 }
 
 main img {
-    width: 20rem;
+    width: 30rem;
 }
 
 .cardLogin {
@@ -34,22 +34,23 @@ main img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 20rem;
-    width: 16rem;
+    height: 30rem;
+    width: 26rem;
     border-radius: 10px;
 }
 
 .cardLogin h1 {
     font-family: "Inter", sans-serif;
     color: white;
+    font-size: 4rem;
 }
 
 .cardLogin input {
     width: 90%;
-    height: 2rem;
-    margin-top: 1rem;
+    height: 4rem;
+    margin-top: 1.5rem;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 5px;
     border: 1px solid #5f5f5f;
     background-color: #373333;
@@ -59,25 +60,32 @@ main img {
 
 .cardLogin a {
     color: white;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
 }
 
 .cardLogin #aEsqueceuSenha {
-    margin-top: 10px;
+    margin-top: 1rem;
     font-size: 0.8rem;
 }
 
 .cardLogin button {
-    padding: 0.3rem 2rem;
-    border-radius: 10px;
+    padding: 0.5rem 3.25rem;
+    border-radius: 15px;
     border: none;
-    margin: 0.5rem;
+    margin: 1rem;
     background-color: #EF3E58;
     color: white;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 1rem;
+}
+
+
+.cardLogin button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .linhaReparticao {
