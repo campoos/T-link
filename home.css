@@ -153,6 +153,10 @@ input {
     font-size: 12px;
     color: white;
 }
+
+.containerPost{
+    margin-left: 1vh;
+}
 .conteudoPost{
     width: 85%;
     height: 85%;
