@@ -58,6 +58,19 @@ main img {
     font-weight: 500;
 }
 
+.contaPremium {
+    width: 90%;
+    height: 4rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #5f5f5f;
+    background-color: #373333;
+    color: white;
+    font-weight: 500;
+}
+
 .cardLogin a {
     color: white;
     margin-top: 0.5rem;
