@@ -22,13 +22,18 @@
     <main>
         <div class="cardLogin">
             <h1>REGISTER</h1>
-            <input type="text" placeholder="Nome completo...">
-            <input type="text" placeholder="Nome de Usuário...">
-            <input type="text" placeholder="Senha...">
-            <input type="text" placeholder="Confirme a senha...">
-            <input type="text" placeholder="Palavra chave...">
+            <form>
+                <input type="text" placeholder="Nome..." id="name" required>
+                <input type="text" placeholder="Email..." id="email" required>
+                <input type="text" placeholder="Senha..." id="password" required>
+                <div class="contaPremium">
+                    <p>Conta Premium?</p>
+                    <input type="checkbox" id="checkbox">
+                </div>
+                <input type="url" placeholder="Imagem de Perfil..." id="img" required>
+            </form>
             <a href="#">
-                <button href>Registrar</button>
+                <button href="#" id="button">Registrar</button>
             </a>
             <div class="linhaReparticao">
                 <hr>

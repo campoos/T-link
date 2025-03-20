@@ -162,12 +162,12 @@ input {
 }
 .conteudoPost{
     width: 85%;
-    height: 85%;
+    height: 90%;
 }
 
 .descPost{
     display: flex;
-    margin-top: 1vh;
+    margin-top: 2.2vh;
 }
 
 .descPost span{
@@ -232,4 +232,4 @@ input {
     padding: 2vh;
 }
 
-    
+
