@@ -62,18 +62,24 @@ form {
 }
 
 .contaPremium {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 90%;
     height: 4rem;
     margin-top: 1.5rem;
-    padding: 1rem;
     font-size: 1.5rem;
-    border-radius: 5px;
-    border: 1px solid #5f5f5f;
-    background-color: #373333;
     color: white;
     font-weight: 500;
+    gap: 3rem;
 }
 
+.contaPremium #checkbox {
+    margin: 0;
+    height: 3rem;
+    width: 3rem;
+}
 
 .cardLogin .voltaLogin {
     margin-top: 1rem;

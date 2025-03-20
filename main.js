@@ -17,11 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         return {
-            nome: nome,
             email: email,
-            senha: senha,
-            premium: checkbox,
-            imagemPerfil: img,
+            senha: senha
         };
     }
 
@@ -42,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Converte a resposta para JSON
             const result = await response.json();
-
             // Verifica se o cadastro foi bem-sucedido
-            if (response.status === 200) {
-                alert("Login realizado com sucesso!");
+            
+            if (response.status == 200) {
+                window.location.href = "home.html"
             } else {
                 alert(`Erro: ${result.message || "Algo deu errado"}`);
             }
@@ -55,5 +52,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    button.addEventListener("click", loginUsuario());
+    button.addEventListener("click", loginUsuario);
 });
