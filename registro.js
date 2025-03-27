@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value;
         const senha = document.getElementById("password").value;
         const img = document.getElementById("img").value;
+        const senhaRecuperacao = document.getElementById("senhaRecuperacao").value;
         const checkbox = document.getElementById("checkbox").checked ? 1 : 0;
 
         // Verifica se todos os campos obrigatórios estão preenchidos
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             senha: senha,
             premium: checkbox,
             imagemPerfil: img,
+            senhaRecuperacao: senhaRecuperacao  
         };
     }
 
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = await response.json();
 
             // Verifica se o cadastro foi bem-sucedido
-            if (response.status === 201) {
+            if (response.ok) {
                 alert("Cadastro realizado com sucesso!");
             } else {
                 alert(`Erro: ${result.message || "Algo deu errado"}`);

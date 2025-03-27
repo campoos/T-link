@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
+    <script src="home.js" defer></script>
     <title>Feed</title>
 </head>
 <body>
@@ -14,9 +15,21 @@
             <div class="logoT">
                 <img src="./img/Logo.png" alt="">
             </div>
-            <div class="profileImg">
+            <div class="descUserHeader">
                 <p>User</p>
-                <img src="./img/userIcon.png" alt="">
+                <div class="profileImg" onclick="toggleMenu()">
+                    <img src="./img/userIcon.png" alt="">
+                </div>
+            </div>
+            <div class="menu" id="userMenu">
+                <ul>
+                    <li><a href="config-user.html">
+                        <img src="./img/settingsIcon.png" alt="">
+                    </a> Settings</li>
+                    <li><img src="./img/laptopIcon.png" alt="">Appearance</li>
+                    <li><img src="./img/infoIcon.png" alt="">Support/Help</li>
+                    <li><img src="/img/logoutIcon.png" alt="">Logout</li>
+                </ul>
             </div>
     </header>
     <main>
@@ -72,7 +85,9 @@
                 </div>
             </div>
         </div>
-        <img src="./img/settingsIcon.png" id="imgRoda" alt="">
+        <a href="config-user.html">
+            <img src="./img/settingsIcon.png" id="imgRoda" alt="">
+        </a>
     </main>
 </body>
 </html>

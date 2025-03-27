@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    background-color: #3B3A3A;
+    width: 100%;
+    height: 110px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: #575757 solid 1px;
+}
+
+header {
+    position: relative;
+    z-index: 500;
+}
+.menu {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    height: 336px;
+    width: 328px;
+    background: #3B3A3A;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #575757;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* Mantém o menu oculto por padrão */
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu img{
+    height: 7vh;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.menu ul li{
+    display: flex;
+    align-items: center;
+    font-size: 24px; 
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.menu li {
+    padding: 1.6vh;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.menu li img{
+    background-color: #575757;
+    border-radius: 60px;
+    padding: 5px;
+}
+
+.menu li:hover {
+    background: #444;
+}
+
+.userMenu{
+    height: 100vh;
+}
+
+
+header .logoT{
+    padding-left: 4vh;
+}
+
+header .logoT img {
+    height: 70px;
+}
+
+.descUserHeader{
+    display: flex;
+    align-items: center;
+}
+
+header .profileImg{
+    display: flex;
+    align-items: center;
+    padding-right: 5vh;
+}
+
+header .profileImg img {
+    height: 60px;
+}
+header p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+    padding-right: 10px;
+}
+
+main{
+    display: flex;
+    background-color: #212121;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.telaUser{
+    height: 100vh;
+    width: 100vh;
+    background-color: #212121;
+    border: 1px solid #717171;
+}

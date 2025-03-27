@@ -36,7 +36,7 @@ main {
 .cardLogin h1 {
     font-family: "Inter", sans-serif;
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-top: 2rem;
     font-weight: 600;
 }
@@ -50,10 +50,10 @@ form {
 
 .cardLogin input {
     width: 90%;
-    height: 4rem;
+    height: 3.5rem;
     margin-top: 1.5rem;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 5px;
     border: 1px solid #5f5f5f;
     background-color: #373333;
@@ -68,7 +68,7 @@ form {
     justify-content: center;
     width: 90%;
     height: 4rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
     color: white;
     font-weight: 500;
@@ -77,8 +77,8 @@ form {
 
 .contaPremium #checkbox {
     margin: 0;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 .cardLogin .voltaLogin {
