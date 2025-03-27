@@ -16,7 +16,7 @@ header{
 
 header {
     position: relative;
-    z-index: 500;
+    z-index: 500;   
 }
 .menu {
     position: absolute;
@@ -44,9 +44,7 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-
+}   
 
 .menu ul li{
     display: flex;
@@ -100,6 +98,7 @@ header .profileImg{
 header .profileImg img {
     height: 60px;
 }
+
 header p{
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -302,7 +301,7 @@ main{
 }
 
 #imgRoda{
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     padding: 2vh;

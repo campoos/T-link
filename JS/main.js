@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 alert("Login bem-sucedido!");
-                window.location.href = "home.html";
+                window.location.href = "/SRC/Pages/screens/home.html";
             } else {
                 alert(`Erro: ${result.message || result.error || "Algo deu errado"}`);
             }
