@@ -1,56 +1,49 @@
 "use strict";
 
-// Espera o DOM carregar antes de adicionar o evento
 document.addEventListener("DOMContentLoaded", function () {
-    // Botão de registro chamado pelo ID
     const button = document.getElementById("button");
 
     function pegarDadosLogin() {
-        // Chamando os elementos do registro pelo ID
         const email = document.getElementById("email").value;
         const senha = document.getElementById("password").value;
 
-        // Verifica se todos os campos obrigatórios estão preenchidos
         if (!email || !senha) {
             alert("Todos os campos são obrigatórios!");
             return null;
         }
 
-        return {
-            email: email,
-            senha: senha
-        };
+        return { email, senha };
     }
 
-    async function loginUsuario() {
+    async function loginUsuario(event) {
+        event.preventDefault(); // Previne recarregar a página
+
+        const dadosLogin = pegarDadosLogin();
+        if (!dadosLogin) return;
+
         try {
-            const dadosLogin = pegarDadosLogin();
-
-            if (!dadosLogin) return; // Interrompe a função se os dados forem inválidos
-
-            // Envia os dados para a API usando o método POST
             const response = await fetch("https://back-spider.vercel.app/login", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dadosLogin),
             });
 
-            // Converte a resposta para JSON
             const result = await response.json();
-            // Verifica se o cadastro foi bem-sucedido
-            
-            if (response.status == 200) {
-                window.location.href = "home.html"
+
+            if (response.ok) {
+                alert("Login bem-sucedido!");
+                window.location.href = "home.html";
             } else {
-                alert(`Erro: ${result.message || "Algo deu errado"}`);
+                alert(`Erro: ${result.message || result.error || "Algo deu errado"}`);
             }
         } catch (error) {
             console.error("Erro ao fazer a requisição:", error);
-            alert("Ocorreu um erro ao tentar logar.");
+            alert("Erro ao conectar ao servidor. Tente novamente.");
         }
     }
 
     button.addEventListener("click", loginUsuario);
+    document.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") loginUsuario(event);
+    });
 });
