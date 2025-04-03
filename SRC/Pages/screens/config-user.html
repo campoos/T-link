@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/config-user.css">
+    <script src="/JS/config-user.js" defer></script>
     <title>Configurações do Usuário</title>
 </head>
 <body>
@@ -39,7 +40,9 @@
                 <p>Settings</p>
             </div>
             <div class="X">
-                <img src="/SRC/imgs/assets/X.png" alt="">
+                <a href="/SRC/Pages/screens/home.html">
+                    <img src="/SRC/imgs/assets/X.png" alt="">
+                </a>
             </div>
         </div>
         <div class="container">
@@ -55,15 +58,34 @@
                     </div>
                 </div>
             </div>
-    
-            <div class="mainPerfil">
-                <div class="headerMainPerfil">
-                    <p>Profile Picture</p>
-                    <div class="Buttons">
-                        <img src="/SRC/imgs/assets/userIcon.png" alt="">
-                        <button>Change Picture</button>
-                        <button>Delete Picture</button>
+            <div class="containerPerfil">
+                <div class="mainPerfil">
+                    <div class="headerMainPerfil">
+                        <p>Profile Picture</p>
+                        <div class="Buttons">
+                            <img src="/SRC/imgs/assets/userIcon.png" alt="">
+                            <button>Change Picture</button>
+                            <button id="Delete">Delete Picture</button>
+                        </div>
                     </div>
+                </div>
+    
+                <div class="mainPerfilContainer">
+                    <div class="mainPerfilNome">
+                        <p>Profile Name</p>
+                        <input type="text" placeholder="Lorem Ipsum">
+                    </div>
+    
+                    <div class="mainPerfilNomeUsuario">
+                        <p>Email</p>
+                        <div class="inputNomeUsuario">
+                            <input type="text" placeholder="Lorem Ipsum">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttonSaveChanges">
+                    <button>Save changes</button>
                 </div>
             </div>
         </div>

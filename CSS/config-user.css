@@ -124,6 +124,7 @@ main{
     background-color: #212121;
     border: 1px solid #717171;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
 .headerTelaUser{
@@ -137,9 +138,9 @@ main{
 .headerTelaUser p{
     font-family: "Inter";
     font-weight: 500;
-    font-size: 32px;
+    font-size: 28px;
     color: white;
-    margin: 16px;
+    margin: 12px;
 }
 
 .headerTelaUser .X{
@@ -192,9 +193,13 @@ main{
     flex-direction: row;
     height: 100%;
 }
+
+.containerPerfil{
+    width: 100%;
+}
 .mainPerfil{
     display: flex;
-    width: 100vh;
+    width: 100%;
     height: 35%;
 }
 
@@ -243,7 +248,7 @@ main{
     color: #FFFFFF;
 }
 
-.DeleteButton button{
+#Delete{
     background: #3B3A3A;
     border-bottom: 2px solid #000000; 
     border-top: none;
@@ -260,3 +265,107 @@ main{
     color: #EF3E58;
 }
 
+
+.mainPerfilNome{
+    width: 100%;
+}
+
+.mainPerfilNome input{
+    width: 95%;
+    height: 40px;
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-left: 20px;
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+}
+.mainPerfilNome input::placeholder{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+
+}
+
+.mainPerfilNome p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+
+.mainPerfilNomeUsuario{
+    width: 100%;
+}
+
+.mainPerfilNomeUsuario input{
+    width: 95%;
+    height: 40px;
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-left: 20px;
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    background-image: url('/SRC/imgs/assets/@.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+    padding-left: 40px;
+}
+.mainPerfilNomeUsuario input::placeholder{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+
+}
+
+.mainPerfilNomeUsuario p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.mainPerfilContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.buttonSaveChanges{
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    margin-top: 100px;
+}
+.buttonSaveChanges button{
+    height: 45px;
+    width: 20vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}

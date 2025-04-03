@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("button");
@@ -47,3 +47,5 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === "Enter") loginUsuario(event);
     });
 });
+
+
