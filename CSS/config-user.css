@@ -117,8 +117,10 @@ main{
 }
 
 .telaUser{
-    height: 100%;
-    width: 100%;
+    display: flex;
+    height: 90%;
+    width: 55%;
+    flex-direction: column;
     background-color: #212121;
     border: 1px solid #717171;
     border-radius: 10px;
@@ -128,16 +130,21 @@ main{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #717171;
+    height: 8vh;
+    width: 100%;
 }
 
 .headerTelaUser p{
     font-family: "Inter";
     font-weight: 500;
-    font-size: 40px;
+    font-size: 32px;
     color: white;
-    padding-left: 35px;
-    padding-top: 35px;
-    padding-bottom: 15px;
+    margin: 16px;
+}
+
+.headerTelaUser .X{
+    margin: 20px;
+    height: 30px;
 }
 
 .textSettings{
@@ -146,18 +153,14 @@ main{
     height: 100%;
 }
 
+
 .mainTelaUser{
     display: flex;
-    height: 10vh;
-    width: 10vh;
+    height: 100%;
+    width: 30vh;
+    border-right: 1px solid #717171;
 }
 
-.headerTelaUser .X{
-    display: flex;
-    height: 30px;
-    margin-top: 42px;
-    padding-right: 35px;
-}
 
 .selectCategoria{
     display: flex;
@@ -180,9 +183,80 @@ main{
 .barraLateral{
     display: flex;
     width: 30vh;
-    height: 10vh;
-    border-right: 1px solid #717171;
     flex-direction: column;
     padding-top: 40px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.mainPerfil{
+    display: flex;
+    width: 100vh;
+    height: 35%;
+}
+
+.headerMainPerfil{
+    width: 100%;
+}
+
+
+.headerMainPerfil p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.headerMainPerfil img{
+    height: 100px;
+}
+
+.Buttons{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.Buttons img{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.Buttons button{
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 5px;
+    outline: none;  
+    height: 40px;
+    width: 150px;
+    margin: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.DeleteButton button{
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 5px;
+    outline: none;  
+    height: 40px;
+    width: 150px;
+    margin: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #EF3E58;
 }
 

@@ -182,6 +182,7 @@ main{
     background-color: #EF3E58;
     border-radius: 4px;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 .publish button{
@@ -307,4 +308,15 @@ main{
     padding: 2vh;
 }
 
-
+#cardPost {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    border-radius: 15px;
+    position: absolute;
+    height: 80%;
+    width: 45%;
+    border: 2px solid #575757;
+    background-color: #3B3A3A;
+    padding: 2rem;
+}
