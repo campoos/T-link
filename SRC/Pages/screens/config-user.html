@@ -20,7 +20,7 @@
         </div>
         <div class="descUserHeader">
             <p>User</p>
-            <div class="profileImg" onclick="toggleMenu()">
+            <div class="profileImg">
                 <img src="/SRC/imgs/assets/userIcon.png" alt="">
             </div>
         </div>
@@ -64,8 +64,10 @@
                         <p>Profile Picture</p>
                         <div class="Buttons">
                             <img src="/SRC/imgs/assets/userIcon.png" alt="">
-                            <button>Change Picture</button>
-                            <button id="Delete">Delete Picture</button>
+                            <div class="inputUrl">
+                                <p>URL</p>
+                                <input type="text" placeholder="Coloque sua URL">      
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,13 +75,13 @@
                 <div class="mainPerfilContainer">
                     <div class="mainPerfilNome">
                         <p>Profile Name</p>
-                        <input type="text" placeholder="Lorem Ipsum">
+                        <input type="text" placeholder="Nome do usuario">
                     </div>
     
                     <div class="mainPerfilNomeUsuario">
                         <p>Email</p>
                         <div class="inputNomeUsuario">
-                            <input type="text" placeholder="Lorem Ipsum">
+                            <input type="text" placeholder="Email do usuario">
                         </div>
                     </div>
                 </div>

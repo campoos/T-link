@@ -90,6 +90,13 @@ header .logoT img {
     display: flex;
     align-items: center;
 }
+.descUserHeader img{
+    height: 100px;
+    width: 65px;
+    object-fit: cover;
+    border-radius: 60px; 
+}
+
 
 header .profileImg{
     display: flex;
@@ -224,14 +231,32 @@ main{
 .Buttons{
     display: flex;
     width: 100%;
-    align-items: center;
+}
+.inputUrl{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .Buttons img{
     margin-left: 40px;
     margin-right: 40px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 60px; 
 }
 
-.Buttons button{
+.Buttons p{
+    display: flex;
+    margin: 10px;
+}
+
+.Buttons .inputUrl input {
+    width: 95%;
+    padding: 10px;
+}
+
+.Buttons input{
     background: #3B3A3A;
     border-bottom: 2px solid #000000; 
     border-top: none;
@@ -241,30 +266,11 @@ main{
     outline: none;  
     height: 40px;
     width: 150px;
-    margin: 10px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #FFFFFF;
 }
-
-#Delete{
-    background: #3B3A3A;
-    border-bottom: 2px solid #000000; 
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 5px;
-    outline: none;  
-    height: 40px;
-    width: 150px;
-    margin: 10px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #EF3E58;
-}
-
 
 .mainPerfilNome{
     width: 100%;

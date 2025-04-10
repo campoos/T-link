@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = await response.json();
 
             if (response.ok) {
+                
+                localStorage.setItem("usuarioId", result.user.id); // salva apenas o ID
+
                 alert("Login bem-sucedido!");
                 window.location.href = "/SRC/Pages/screens/home.html";
             } else {
@@ -47,5 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === "Enter") loginUsuario(event);
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

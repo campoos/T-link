@@ -11,30 +11,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lacquer&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./JS/main.js" defer></script>
+    <link rel="stylesheet" href="/CSS/recuperacao-senha1.css">
+    <script src="/JS/registro.js" defer></script>
     <title>T-Link</title>
 </head>
 <body>
     <header>
-        <img src="/SRC/imgs/assets/Logo.png" alt="">
+        <img src="./img/Logo.png" alt="">
     </header>
     <main>
-        <img src="/SRC/imgs/assets/sticker-login.png" alt="">
         <div class="cardLogin">
-            <h1>LOGIN</h1>
-            <input type="text" placeholder="Email..." id="email">
-            <input type="text" placeholder="Senha..." id="password">
-            <a href="/SRC/Pages/screens/recuperacao-senha1.html" id="aEsqueceuSenha">Esqueceu a senha?</a>
-            <a href="">
-                <button href id="button">Entrar</button>
-            </a>
+            <img src="/SRC/imgs/assets/cadeadoRecuperacaoSenha.png" alt="">
+            <h1>Problemas para entrar?  </h1>
+            <h2>Insira seu usuário para efetuar a validação</h2>
+            <form>
+                <input type="text" placeholder="Nome..." id="name" required>    
+                <a href="#">
+                    <button href="#" id="button">Registrar</button>
+                </a>
+            </form>
+
             <div class="linhaReparticao">
                 <hr>
                 <span>ou</span>
-                <hr>
+                <hr>    
             </div>
-            <a href="/SRC/Pages/screens/registro.html">Criar nova conta</a>
+            <div class="voltaLogin">
+                <a href="/index.html">Voltar ao Login</a>
+            </div>
         </div>
     </main>
 </body>

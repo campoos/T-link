@@ -235,3 +235,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 botaoPublish.addEventListener("click", criarPostTela)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
