@@ -34,16 +34,24 @@ main {
 }
 
 .cardLogin img {
-    height: 8rem;
-    margin-top: 2rem;
+    height: 9rem;
+    margin-top: 3rem;
 }
 
 .cardLogin h1 {
     font-family: "Inter", sans-serif;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-top: 2rem;
-    font-weight: 400;
+    font-weight: 500;
+}
+
+.cardLogin h2 {
+    color: rgb(176, 175, 175);
+    font-weight: 200;
+    font-size: 1.1rem;
+    width: 50%;
+    text-align: center;
 }
 
 form {
@@ -101,6 +109,9 @@ form {
     font-size: 1.25rem;
     font-weight: 200;
     text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .cardLogin button {
@@ -114,8 +125,8 @@ form {
     font-weight: 500;
     cursor: pointer;
     margin-top: 1rem;
+    width: 90%;
 }
-
 
 .cardLogin button:active {
     transform: scale(0.95);
@@ -127,7 +138,7 @@ form {
     align-items: center;
     width: 90%;
     gap: 0.5rem;
-    margin: 5px 0px 5px 0px;
+    margin: 10px 0px 15px 0px;
 }
 
 .linhaReparticao hr {
@@ -135,6 +146,18 @@ form {
     height: 0.5px;
     border: none;
     background-color: white;
+}
+
+.cardLogin h3 {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.cardLogin h3:hover {
+    cursor: pointer;
 }
 
 .linhaReparticao span {
