@@ -125,7 +125,7 @@ main{
 
 .telaUser{
     display: flex;
-    height: 90%;
+    height: 100%;
     width: 55%;
     flex-direction: column;
     background-color: #212121;
@@ -151,7 +151,7 @@ main{
 }
 
 .headerTelaUser .X{
-    margin: 20px;
+    margin: 15px;
     height: 30px;
 }
 
@@ -207,7 +207,7 @@ main{
 .mainPerfil{
     display: flex;
     width: 100%;
-    height: 35%;
+    height: 30%;
 }
 
 .headerMainPerfil{
@@ -220,7 +220,7 @@ main{
     font-weight: 600;
     font-size: 24px;
     color: #FFFFFF;
-    margin-top: 45px;
+    margin-top: 30px;
     margin-left: 20px;
 }
 
@@ -307,11 +307,11 @@ main{
 }
 
 
-.mainPerfilNomeUsuario{
+.mainPerfilEmailUsuario{
     width: 100%;
 }
 
-.mainPerfilNomeUsuario input{
+.mainPerfilEmailUsuario input{
     width: 95%;
     height: 40px;
     background: #3B3A3A;
@@ -331,14 +331,91 @@ main{
     background-size: 20px;
     padding-left: 40px;
 }
-.mainPerfilNomeUsuario input::placeholder{
+.mainPerfilEmailUsuario input::placeholder{
     font-family: "Roboto", sans-serif;
     font-weight: 200;
     font-size: 18px;
 
 }
 
-.mainPerfilNomeUsuario p{
+.mainPerfilEmailUsuario p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.mainPerfilSenhaUsuario{
+    width: 100%;
+}
+
+.mainPerfilSenhaUsuario input{
+    width: 95%;
+    height: 40px;
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    background-image: url('/SRC/imgs/assets/hashtag.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+    padding-left: 40px;
+}
+.mainPerfilSenhaUsuario input::placeholder{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+
+}
+
+.mainPerfilSenhaUsuario p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.mainPerfilSenhaRecuperacaoUsuario{
+    width: 100%;
+}
+
+.mainPerfilSenhaRecuperacaoUsuario input{
+    width: 95%;
+    height: 40px;
+    background: #3B3A3A;
+    border-bottom: 2px solid #000000; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-left: 20px;
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    background-image: url('/SRC/imgs/assets/hashtag.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+    padding-left: 40px;
+}
+.mainPerfilSenhaRecuperacaoUsuario input::placeholder{
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+
+}
+
+.mainPerfilSenhaRecuperacaoUsuario p{
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 24px;
@@ -349,14 +426,14 @@ main{
 .mainPerfilContainer{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .buttonSaveChanges{
     display: flex;
     justify-content: end;
+    margin-top: 10px;
     margin-right: 20px;
-    margin-top: 100px;
 }
 .buttonSaveChanges button{
     height: 45px;
@@ -374,4 +451,5 @@ main{
     padding: 10px;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }

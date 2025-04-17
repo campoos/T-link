@@ -227,10 +227,24 @@ async function gerarPosts() {
     }
 }
 
+async function ColocarFotinha(){
+    const NovoUser = document.getElementById('nomeUser')
+    const NovaIMG = document.getElementById('fotinha')
 
+    
+    const dadosTotal = JSON.parse(localStorage.getItem("todosDados"));
+    console.log(dadosTotal)
+    try {
+    NovoUser.textContent = dadosTotal.nome
+    NovaIMG.src = dadosTotal.imagemPerfil
+    } catch (error) {
+    
+}    
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     gerarPosts()
+    ColocarFotinha()
 });
 
 

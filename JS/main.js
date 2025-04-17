@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 
                 localStorage.setItem("usuarioId", result.user.id); // salva apenas o ID
+                localStorage.setItem("todosDados", JSON.stringify(result.user));
 
                 alert("Login bem-sucedido!");
                 window.location.href = "/SRC/Pages/screens/home.html";

@@ -53,6 +53,14 @@ form {
     width: 100%;
 }
 
+form a{
+    width: 100%;
+}
+
+form button{
+    width: 93%;
+}
+
 .cardLogin input {
     width: 90%;
     height: 3.5rem;
@@ -140,4 +148,20 @@ form {
 .linhaReparticao span {
     color: white;
     font-size: 0.8rem;
+}
+
+.pageCadastro p{
+    font-family: "Roboto", sans-serif;
+    text-decoration: underline;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+h2{
+    text-align: center;
+    width: 240px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 19px;
+    color: white;
 }

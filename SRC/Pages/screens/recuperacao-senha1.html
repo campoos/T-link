@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lacquer&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/CSS/recuperacao-senha1.css">
-    <script src="/JS/registro.js" defer></script>
+    <link rel="stylesheet" href="/CSS/recuperacao-senha.css">
+    <script src="/JS/recuperacao-senha.js" defer></script>
     <title>T-Link</title>
 </head>
 <body>
     <header>
-        <img src="./img/Logo.png" alt="">
+        <img src="/SRC/imgs/assets/Logo.png" alt="">
     </header>
     <main>
         <div class="cardLogin">
@@ -25,16 +25,21 @@
             <h1>Problemas para entrar?  </h1>
             <h2>Insira seu usuário para efetuar a validação</h2>
             <form>
-                <input type="text" placeholder="Nome..." id="name" required>    
+                <input type="text" placeholder="Nome..." id="nameInput" required>    
                 <a href="#">
-                    <button href="#" id="button">Registrar</button>
+                    <button href="#" id="button" onclick=verificarSenhaRecuperacao()>Enviar</button>
                 </a>
             </form>
 
             <div class="linhaReparticao">
                 <hr>
                 <span>ou</span>
-                <hr>    
+                <hr>  
+            </div>
+            <div class="pageCadastro">
+                <a href="/SRC/Pages/screens/registro.html">
+                    <p>Criar nova conta</p>
+                </a>  
             </div>
             <div class="voltaLogin">
                 <a href="/index.html">Voltar ao Login</a>
