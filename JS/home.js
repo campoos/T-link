@@ -3,68 +3,110 @@ var userMenu = document.getElementById("userMenu");
 const botaoPublish = document.getElementById("buttonPostar");
 
 profileImg.addEventListener("click", function (event) {
-    // Alterna a visibilidade do menu
-    if (userMenu.style.display === "none" || userMenu.style.display === "") {
-        userMenu.style.display = "block";
-    } else {
-        userMenu.style.display = "none";
-    }
-    event.stopPropagation(); // Impede que o clique se propague para o document
+    userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+    event.stopPropagation();
 });
 
-// Fecha o menu ao clicar fora dele
 document.addEventListener("click", function (event) {
     if (!userMenu.contains(event.target) && !profileImg.contains(event.target)) {
         userMenu.style.display = "none";
     }
 });
 
-function criarPostTela(){
-    const inputTextPost = document.getElementById("inputTextoPost").value
-    const main = document.getElementById('main')
+async function novoPost() {
+    const descricaoInput = document.getElementById("inputTextoPost").value;
+    const imagemInput = document.getElementById("inputImagemPost").value;
+    const localInput = document.getElementById("inputLocationPost").value;
 
-    const cardPost = document.createElement('div')
-    cardPost.id = "cardPost"
+    const dadosTotal = JSON.parse(localStorage.getItem("todosDados"));
 
-    const botaoVoltar = document.createElement("a")
-    botaoVoltar.href = "/SRC/Pages/screens/home.html"
+    const dataAtual = new Date();
+    const dataFormatada = `${String(dataAtual.getDate()).padStart(2, '0')}/${String(dataAtual.getMonth() + 1).padStart(2, '0')}/${dataAtual.getFullYear()}`;
 
-    const xVoltar = document.createElement('img')
-    xVoltar.src = "/SRC/imgs/assets/X.png"
-    xVoltar.id = "xVoltar"
+    const jsonInformacoes = {
+        descricao: descricaoInput,
+        dataPublicacao: dataFormatada,
+        imagem: imagemInput,
+        local: localInput,
+        idUsuario: dadosTotal.id
+    };
 
-    const inputTextoPost = document.createElement("input")
-    inputTextoPost.placeholder = "What's in your mind?"
-    inputTextoPost.id = "inputTextoPost"
-    inputTextoPost.value = inputTextPost
+    console.log(jsonInformacoes);
 
-    const inputImagemPost = document.createElement("input")
-    inputImagemPost.placeholder = "Image Link of post..."
-    inputImagemPost.id = "inputImagemPost"
+    try {
+        const response = await fetch("https://back-spider.vercel.app/publicacoes/cadastrarPublicacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(jsonInformacoes)
+        });
 
-    const inputLocationPost = document.createElement("input")
-    inputLocationPost.placeholder = "Location..."
-    inputLocationPost.id = "inputLocationPost"
+        const dados = await response.json();
 
-    const divBotao = document.createElement('div')
-    divBotao.id = "divBotao"
-
-    const botaoPostar = document.createElement("button")
-    botaoPostar.id = "botaoPostar"
-    botaoPostar.textContent = "Publish"
-
-    divBotao.appendChild(botaoPostar)
-
-    botaoVoltar.appendChild(xVoltar)
-
-    cardPost.appendChild(botaoVoltar)
-    cardPost.appendChild(inputTextoPost)
-    cardPost.appendChild(inputImagemPost)
-    cardPost.appendChild(inputLocationPost)
-    cardPost.appendChild(divBotao)
-
-    main.appendChild(cardPost)
+        if (dados.message === "Todos os campos são obrigatórios") {
+            alert("Não foi possível postar");
+        } else {
+            alert("Post feito");
+            window.location.reload(); // recarrega a página para mostrar o novo post
+        }
+    } catch (error) {
+        console.error("Erro ao postar", error);
+        alert("Erro ao tentar postar. Tente novamente mais tarde.");
+    }
 }
+
+function criarPostTela(descricaoInicial = "") {
+    const main = document.getElementById('main');
+
+    const cardPost = document.createElement('div');
+    cardPost.id = "cardPost";
+
+    const botaoVoltar = document.createElement("a");
+    botaoVoltar.href = "/SRC/Pages/screens/home.html";
+
+    const xVoltar = document.createElement('img');
+    xVoltar.src = "/SRC/imgs/assets/X.png";
+    xVoltar.id = "xVoltar";
+
+    const inputTextoPost = document.createElement("input");
+    inputTextoPost.placeholder = "What's in your mind?";
+    inputTextoPost.id = "inputTextoPost";
+    inputTextoPost.required = true;
+    inputTextoPost.value = descricaoInicial;
+
+    const inputImagemPost = document.createElement("input");
+    inputImagemPost.placeholder = "Image Link of post...";
+    inputImagemPost.id = "inputImagemPost";
+    inputImagemPost.required = true;
+
+    const inputLocationPost = document.createElement("input");
+    inputLocationPost.placeholder = "Location...";
+    inputLocationPost.id = "inputLocationPost";
+    inputLocationPost.required = true;
+
+    const divBotao = document.createElement('div');
+    divBotao.id = "divBotao";
+
+    const botaoPostar = document.createElement("button");
+    botaoPostar.id = "botaoPostar";
+    botaoPostar.textContent = "Publish";
+
+    botaoPostar.addEventListener("click", novoPost);
+
+    divBotao.appendChild(botaoPostar);
+    botaoVoltar.appendChild(xVoltar);
+
+    cardPost.appendChild(botaoVoltar);
+    cardPost.appendChild(inputTextoPost);
+    cardPost.appendChild(inputImagemPost);
+    cardPost.appendChild(inputLocationPost);
+    cardPost.appendChild(divBotao);
+
+    main.appendChild(cardPost);
+}
+
+
 
 async function pegarPosts(){
     try {
@@ -102,126 +144,127 @@ async function pegarUsuarios(){
     }
 }
 
-async function gerarPosts() {
-    const dadosPosts = await pegarPosts(); // Espera os dados antes de continuar
-    const dadosUsuarios = await pegarUsuarios(); // Espera os dados antes de continuar
+async function buscarUsuarioPorId(id) {
+    try {
+        const resposta = await fetch(`https://back-spider.vercel.app/user/pesquisarUser/${id}`);
+        if (!resposta.ok) throw new Error("Erro ao buscar usuário");
+        const usuario = await resposta.json();
+        return usuario;
+    } catch (erro) {
+        console.error("Erro ao buscar usuário:", erro);
+        return null;
+    }
+}
 
-    if (dadosPosts) {
-        const mainElement = document.querySelector("main"); // Seleciona o elemento <main> onde os posts serão gerados
+
+
+
+async function gerarPosts() {
+    const dadosPosts = await pegarPosts();
+    const dadosUsuarios = await pegarUsuarios();
+
+    if (dadosPosts && dadosUsuarios) {
+        const mainElement = document.querySelector("main");
 
         dadosPosts.forEach(post => {
-            // Criação do div principal para cada post
+            const usuarioPost = dadosUsuarios.find(user => user.id === post.idUsuario);
+        
+            
+            // Div principal
             const postUserDiv = document.createElement("div");
             postUserDiv.classList.add("postUsers");
-
-            // Criação do conteúdo do post
+        
             const conteudoPostDiv = document.createElement("div");
             conteudoPostDiv.classList.add("conteudoPost");
-
-            // Criação das informações do usuário
+        
             const infoUserDiv = document.createElement("div");
             infoUserDiv.classList.add("infoUser");
-
-            // Criação da imagem do perfil do usuário
+        
             const profileImgDiv = document.createElement("div");
             profileImgDiv.classList.add("profileImg");
             const profileImg = document.createElement("img");
-            profileImg.src = "/SRC/imgs/assets/userIcon.png"; // Substitua com a URL da imagem do usuário, se disponível
+            profileImg.src = usuarioPost?.imagemPerfil || "/SRC/imgs/assets/userIcon.png";
             profileImg.alt = "User Profile";
             profileImgDiv.appendChild(profileImg);
-
-            // Container do nome, data e local do post
+        
             const containerPostDiv = document.createElement("div");
             containerPostDiv.classList.add("containerPost");
-
-            // Nome do usuário
+        
             const userNameDiv = document.createElement("div");
             userNameDiv.classList.add("userName");
             const userNameP = document.createElement("p");
-            userNameP.textContent = "User"; // Substitua com o nome do usuário se disponível
+            userNameP.textContent = usuarioPost?.nome || "Usuário Desconhecido";
             userNameDiv.appendChild(userNameP);
-
-            // Data do post
+        
             const datePostDiv = document.createElement("div");
             datePostDiv.classList.add("datePost");
             const datePostSpan = document.createElement("span");
-            datePostSpan.textContent = post.dataPublicacao; // Data da publicação
+            datePostSpan.textContent = post.dataPublicacao;
             datePostDiv.appendChild(datePostSpan);
-
-            // Local do post
+        
             const localPostDiv = document.createElement("div");
             localPostDiv.classList.add("localPost");
             const localPostImg = document.createElement("img");
-            localPostImg.src = "/SRC/imgs/assets/earth.png"; // Ícone de localização (substitua conforme necessário)
+            localPostImg.src = "/SRC/imgs/assets/earth.png";
             localPostImg.alt = "Location Icon";
-            localPostImg.id = "earthIcon"
+            localPostImg.id = "earthIcon";
             localPostDiv.appendChild(localPostImg);
             const localPostSpan = document.createElement("span");
-            localPostSpan.textContent = post.local; // Local da publicação
+            localPostSpan.textContent = post.local;
             localPostDiv.appendChild(localPostSpan);
-
-            // Adicionando as partes da "infoUser"
+        
             containerPostDiv.appendChild(userNameDiv);
             containerPostDiv.appendChild(datePostDiv);
             containerPostDiv.appendChild(localPostDiv);
+        
             infoUserDiv.appendChild(profileImgDiv);
             infoUserDiv.appendChild(containerPostDiv);
-
-            // Descrição do post
+        
             const descPostDiv = document.createElement("div");
             descPostDiv.classList.add("descPost");
             const descPostSpan = document.createElement("span");
-            descPostSpan.textContent = post.descricao; // Descrição do post
+            descPostSpan.textContent = post.descricao;
             descPostDiv.appendChild(descPostSpan);
-
-            // Imagem do post
+        
             const imgPostDiv = document.createElement("div");
             imgPostDiv.classList.add("imgPost");
             const imgPost = document.createElement("img");
-            imgPost.src = post.imagem; // Imagem do post
+            imgPost.src = post.imagem;
             imgPost.alt = "Post Image";
             imgPostDiv.appendChild(imgPost);
-
-            // Interações do post (curtidas e comentários)
+        
             const interationUserDiv = document.createElement("div");
             interationUserDiv.classList.add("interationUser");
-
-            // Curtidas (Verificar se 'curtidas' está definido)
+        
             const likeDiv = document.createElement("div");
             likeDiv.classList.add("like");
             const likeImg = document.createElement("img");
-            likeImg.src = "/SRC/imgs/assets/likeIcon.png"; // Ícone de curtidas
+            likeImg.src = "/SRC/imgs/assets/likeIcon.png";
             likeImg.alt = "Like Icon";
             likeDiv.appendChild(likeImg);
             const likeP = document.createElement("p");
-            likeP.textContent = post.curtidas ? post.curtidas.length : 0; // Verifica se 'curtidas' existe, senão atribui 0
+            likeP.textContent = post.curtidas ? post.curtidas.length : 0;
             likeDiv.appendChild(likeP);
-
-            // Comentários (Verificar se 'comentarios' está definido)
+        
             const commentDiv = document.createElement("div");
             commentDiv.classList.add("comment");
             const commentImg = document.createElement("img");
-            commentImg.src = "/SRC/imgs/assets/commentsIcon.png"; // Ícone de comentários
+            commentImg.src = "/SRC/imgs/assets/commentsIcon.png";
             commentImg.alt = "Comment Icon";
             commentDiv.appendChild(commentImg);
             const commentP = document.createElement("p");
-            commentP.textContent = post.comentarios ? post.comentarios.length : 0; // Verifica se 'comentarios' existe, senão atribui 0
+            commentP.textContent = post.comentarios ? post.comentarios.length : 0;
             commentDiv.appendChild(commentP);
-
-            // Adicionando as partes da "interationUser"
+        
             interationUserDiv.appendChild(likeDiv);
             interationUserDiv.appendChild(commentDiv);
-
-            // Juntando tudo no "conteudoPost"
+        
             conteudoPostDiv.appendChild(infoUserDiv);
             conteudoPostDiv.appendChild(descPostDiv);
             conteudoPostDiv.appendChild(imgPostDiv);
             conteudoPostDiv.appendChild(interationUserDiv);
-
-            // Adicionando o "conteudoPost" no "postUserDiv"
+        
             postUserDiv.appendChild(conteudoPostDiv);
-
-            // Adicionando o post completo no <main>
             mainElement.appendChild(postUserDiv);
         });
     }
@@ -247,9 +290,10 @@ document.addEventListener('DOMContentLoaded', function() {
     ColocarFotinha()
 });
 
-
-botaoPublish.addEventListener("click", criarPostTela)
-
+botaoPublish.addEventListener("click", function () {
+    const descricaoDigitada = document.getElementById("inputTextoPostHome").value;
+    criarPostTela(descricaoDigitada);
+});
 
 
 

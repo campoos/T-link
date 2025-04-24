@@ -103,6 +103,8 @@ header .profileImg{
 
 header .profileImg img {
     height: 60px;
+    width: 60px;
+    border-radius: 50%;
 }
 
 header p{
@@ -217,6 +219,8 @@ main{
 
 .conteudoPost .profileImg img {
     height: 60px;
+    width: 60px;
+    border-radius: 50%;
 }
 
 .conteudoPost .imgPost {
@@ -353,7 +357,6 @@ main{
     margin-top: 1rem;
     border-radius: 15px;
     position: absolute;
-    height: 70%;
     width: 39%;
     border: 2px solid #575757;
     background-color: #3B3A3A;
